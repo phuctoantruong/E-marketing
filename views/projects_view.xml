@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <!-- Action to open To-Do Task list -->
+    <act_window id="action_projects_management"
+      name="E-marketing Management"
+      res_model="emarketingapp.projects"
+      view_mode="tree,form" />
+      
+	<!-- Menu Items -->
+	<menuitem id="menu_projects_management_top"
+      name="Marketing Management" sequence="40"/>
+      
+    <menuitem id="menu_projects_management_root"
+      name="Projects Management" parent="menu_projects_management_top" />
+
+    <menuitem id="menu_project_management"
+      name="Projects"
+      parent="menu_projects_management_root"
+      sequence="10"
+      action="action_projects_management" />  
+      
+    <!-- report Items-->
+     <menuitem id="menu_reports_management_root"
+      name="Report Managerment" parent="menu_projects_management_top" />
+
+    <menuitem id="menu_reports_management"
+      name="Report Items"
+      parent="menu_reports_management_root"
+      sequence="10"
+      action="action_projects_management" /> 
+   <!-- Projects List view -->
+   <record id="view_tree_projects_management" model="ir.ui.view">   
+      <field name="name">Email Management</field>
+      <field name="model">emarketingapp.projects</field>
+      <field name="arch" type="xml">        
+         <tree>
+          <field name="id"/>
+          <field name="project_name"/>   
+          <field name="short_desc"/>
+        </tree>
+      </field>
+	</record>    	
+    
+     <!-- Projects Form view -->
+    <record id="view_form_projects_management" model="ir.ui.view">
+      <field name="name">Email Management</field>
+      <field name="model">emarketingapp.projects</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <h1>Quản lí Project</h1>
+          </header>
+          <sheet>
+            <group name="group_top">
+              <group name="group_left">
+                <field name="project_name"/>
+                <field name="short_desc"/>                
+              </group>            
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+  </data>
+</openerp>
