@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <!-- Action to open To-Do Task list -->
+    <act_window id="action_facebook_management"
+      name="Facebook Management"
+      res_model="emarketingapp.facebook"
+      view_mode="tree,form" />
+      
+	<!-- Menu Items -->
+    <menuitem id="menu_facebook_management"
+      name="Facebook"
+      parent="menu_object_management_root"
+      sequence="20"
+      action="action_facebook_management" />      
+      
+       <!-- Facebook List view -->
+    <record id="view_tree_facebook_management" model="ir.ui.view">   
+      <field name="name">Facebook Management</field>
+      <field name="model">emarketingapp.facebook</field>
+      <field name="arch" type="xml">        
+         <tree>
+          <field name="name"/>
+          <field name="result"/>
+          <field name="reach"/>
+          <field name="cost"/>
+          <field name="amount_spent"/>
+          <field name="budget"/>   
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Facebook Form view -->
+    <record id="view_form_facebook_management" model="ir.ui.view">
+      <field name="name">Facebook Management</field>
+      <field name="model">emarketingapp.facebook</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+				<h3>Facebook Management</h3>
+				<button string="Generate Record" type="object" name="generate_record" class="oe_highlight"/>
+			</header>
+          <sheet>
+            <group name="group_top">
+              <group name="group_left">
+                <field name="name"/>
+	          	<field name="result"/>
+	          	<field name="reach"/>                
+              </group>
+              <group name="group_right">
+                <field name="cost"/>
+          		<field name="amount_spent"/>
+          		<field name="budget"/>             
+              </group>               
+            </group>
+          </sheet>
+        </form>
+
+      </field>
+    </record>
+    
+  </data>
+</openerp>
