@@ -16,6 +16,8 @@ class SEO(models.Model):
         cr, uid, pool = request.cr, request.uid, request.registry
         listkeyword = pool['emarketingapp.listkeyword']
         keywords = self.keyword
+        idkeyword = self.id
+        print  id
         print keywords
         adwords_client = adwords.AdWordsClient.LoadFromStorage()
         adwords_client.SetClientCustomerId('2253118112')
@@ -39,6 +41,7 @@ class SEO(models.Model):
                 'requestedAttributeTypes': ['KEYWORD_TEXT',
                                             'SEARCH_VOLUME',
                                             'COMPETITION',
+                                            'AVERAGE_CPC',
                                             'CATEGORY_PRODUCTS_AND_SERVICES'
                                             ],
                     'paging': {
@@ -65,7 +68,7 @@ class SEO(models.Model):
                           else:
                             attributes[attribute['key']] = []
                         print (attributes['KEYWORD_TEXT'])
-                        listkeyword.create(cr, uid, {'id':self.id,'keyword': attributes['KEYWORD_TEXT'],'volume':attributes['SEARCH_VOLUME'],'competition':attributes['COMPETITION']})
+                        listkeyword.create(cr, uid, {'keywords':idkeyword,'keyword': attributes['KEYWORD_TEXT'],'cpc':attributes['AVERAGE_CPC'].microAmount,'volume':attributes['SEARCH_VOLUME'],'competition':attributes['COMPETITION']})
                         #cr.execute('insert into emarketingapp.listkeyword (keyword,volume) values($s,$s)',(attributes['KEYWORD_TEXT'],attributes['SEARCH_VOLUME']))
                     else:
                         break

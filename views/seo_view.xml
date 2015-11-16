@@ -2,7 +2,11 @@
 <openerp>
     <data>
         <act_window id="action_seo_model"
-                name="Seo Marketing"
+                name="Keyword Planner"
+                res_model="emarketingapp.seo"
+                view_mode="tree,form"/>
+         <act_window id="action_keyword_traffic"
+                name="Keyword Traffic"
                 res_model="emarketingapp.seo"
                 view_mode="tree,form"/>
         <!-- Menu item to open-->
@@ -15,7 +19,13 @@
                 name="Keyword Planner"
                 parent="menu_object_management_root"
                 action="action_seo_model"/>
-       <!-- SEO List view -->
+         <menuitem id="menu_seo_traffic"
+                name="Traffic Keyword"
+                parent="menu_object_management_root"
+                action="action_keyword_traffic"/>
+
+        <!--get key word planner-->
+        <!-- SEO List view -->
         <record id="view_tree_seo_managerment" model="ir.ui.view">
             <field name="name">Seo Managerment</field>
             <field name="model">emarketingapp.seo</field>
@@ -43,7 +53,14 @@
                             <field name="location" id="location"/>
                         </group>
                     </group>
-                    <field name="keywords" id="keywords"/>
+                    <field name="keywords" >
+                        <tree>
+                            <field name="keyword"/>
+                            <field name="volume"/>
+                            <field name="competition"/>
+                            <field name="cpc"/>
+                        </tree>
+                    </field>
                     <footer>
                         <button  string="Get Keyword" name="button_get_keyword2" type="object" class="oe_highlight"/>
                         or
@@ -52,5 +69,10 @@
                 </form>
             </field>
         </record>
+        <!--end get key word planner-->
+
+
+
+
     </data>
 </openerp>
