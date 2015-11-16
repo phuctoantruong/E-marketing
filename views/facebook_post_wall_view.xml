@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <!-- Action to open To-Do Task list -->
+    <act_window id="action_facebook_post_wall_management"
+      name="Facebook Post Wall Management"
+      res_model="emarketingapp.facebookpostwall"
+      view_mode="tree,form" />
+      
+    <menuitem id="menu_facebook_management_root"
+      name="Facebook Management" parent="menu_emarketing_top" />
+
+    <menuitem id="menu_facebook_post_wall_management"
+      name="Facebook Post Wall Management"
+      parent="menu_facebook_management_root"
+      sequence="10"
+      action="action_facebook_post_wall_management" />  
+   
+      
+       <!-- Facebook Post List view -->
+    <record id="view_tree_facebook_post_wall_management" model="ir.ui.view">   
+      <field name="name">Facebook Post Wall Management</field>
+      <field name="model">emarketingapp.facebookpostwall</field>
+      <field name="arch" type="xml">        
+         <tree>
+          <field name="id"/>
+          <field name="content"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Facebook Post Form view -->
+    <record id="view_form_facebook_post_wall_management" model="ir.ui.view">
+      <field name="name">Facebook Post Wall Management</field>
+      <field name="model">emarketingapp.facebookpostwall</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+			<h3>Facebook Post Wall Management</h3>
+			<button string="POST" type="object" name="post" class="oe_highlight"/>
+			<button string="Get ID" type="object" name="getId" class="oe_highlight"/>
+	      </header>
+          <sheet>
+            <group name="group_top">
+              <field name="id"/>
+	          <field name="content"/>
+            </group>
+          </sheet>
+        </form>
+
+      </field>
+    </record>
+    
+  </data>
+</openerp>

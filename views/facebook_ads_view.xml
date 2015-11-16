@@ -21,8 +21,8 @@
       action="action_facebook_ads_management" />  
    
       
-       <!-- Facebook List view -->
-    <record id="view_tree_facebook_management" model="ir.ui.view">   
+       <!-- Facebook Ads List view -->
+    <record id="view_tree_facebook_ads_management" model="ir.ui.view">   
       <field name="name">Facebook Ads Management</field>
       <field name="model">emarketingapp.facebookads</field>
       <field name="arch" type="xml">        
@@ -37,8 +37,8 @@
       </field>
     </record>
     
-    <!-- Facebook Form view -->
-    <record id="view_form_facebook_management" model="ir.ui.view">
+    <!-- Facebook Ads Form view -->
+    <record id="view_form_facebook_ads_management" model="ir.ui.view">
       <field name="name">Facebook Management</field>
       <field name="model">emarketingapp.facebookads</field>
       <field name="arch" type="xml">
