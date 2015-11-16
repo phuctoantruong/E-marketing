@@ -5,6 +5,6 @@
     'application': True,
     'data' : [
         'views/seo_view.xml',
-        'views/facebook_view.xml'
+        'views/facebook_ads_view.xml'
     ]
 }

@@ -4,7 +4,8 @@ import conversionrateseo_model
 import conversionrateyoutube_model
 import customer_model
 import email_model
-import facebook_model
+import facebook_info_model
+import facebook_ads_model
 import facebook_post_wall_model
 import listkeywordseo_model
 import object_model

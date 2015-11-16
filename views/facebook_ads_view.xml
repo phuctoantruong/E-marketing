@@ -2,22 +2,29 @@
 <openerp>
   <data>
     <!-- Action to open To-Do Task list -->
-    <act_window id="action_facebook_management"
-      name="Facebook Management"
-      res_model="emarketingapp.facebook"
+    <act_window id="action_facebook_ads_management"
+      name="Facebook Ads Management"
+      res_model="emarketingapp.facebookads"
       view_mode="tree,form" />
       
 	<!-- Menu Items -->
-    <menuitem id="menu_facebook_management"
-      name="Facebook"
-      parent="menu_object_management_root"
-      sequence="20"
-      action="action_facebook_management" />      
+	<menuitem id="menu_emarketing_top"
+      name="E-marketing Management" sequence="40"/>
+      
+    <menuitem id="menu_facebook_management_root"
+      name="Facebook Management" parent="menu_emarketing_top" />
+
+    <menuitem id="menu_facebook_ads_management"
+      name="Facebook Ads"
+      parent="menu_facebook_management_root"
+      sequence="10"
+      action="action_facebook_ads_management" />  
+   
       
        <!-- Facebook List view -->
     <record id="view_tree_facebook_management" model="ir.ui.view">   
-      <field name="name">Facebook Management</field>
-      <field name="model">emarketingapp.facebook</field>
+      <field name="name">Facebook Ads Management</field>
+      <field name="model">emarketingapp.facebookads</field>
       <field name="arch" type="xml">        
          <tree>
           <field name="name"/>
@@ -33,7 +40,7 @@
     <!-- Facebook Form view -->
     <record id="view_form_facebook_management" model="ir.ui.view">
       <field name="name">Facebook Management</field>
-      <field name="model">emarketingapp.facebook</field>
+      <field name="model">emarketingapp.facebookads</field>
       <field name="arch" type="xml">
         <form>
           <header>

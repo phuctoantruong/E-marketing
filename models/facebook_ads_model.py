@@ -11,9 +11,9 @@ import random
 from random import randint
 import string
 
-class Facebook(models.Model):
-    _name = 'emarketingapp.facebook'
-    _description = 'Facebook Object'
+class FacebookAds(models.Model):
+    _name = 'emarketingapp.facebookads'
+    _description = 'Facebook Ads Object'
     name = fields.Char(required=True, default='Click on generate name!')
     result = fields.Integer('Result', required=True)   
     # Number of people your ad was shown to
