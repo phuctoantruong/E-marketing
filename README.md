@@ -1,2 +1,1 @@
-# marketing_thesis
-project for my thesis
+# THESIS - Information System 2011 - IS - UIT - VNU
